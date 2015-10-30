@@ -3,8 +3,9 @@ Evaluation of beacons as indoor positioning.
 
 
 # Server side
-POST
-/beacons
+POST /beacons
+
+```
 	{	 
 	 "beacons": [ 
 	 { "mac": "", "id": "", "alias": "", "powerLevel": "", "rssi": "", "beaconTimestamp": "" },
@@ -17,3 +18,4 @@ POST
 		"device" : ""
 	 }
 	}
+```

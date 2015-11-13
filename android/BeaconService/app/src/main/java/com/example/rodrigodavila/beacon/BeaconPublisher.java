@@ -25,7 +25,9 @@ public class BeaconPublisher extends ScanCallback {
     }
 
     public void detach(BeaconSubscriber subs) {
-        subscribers.remove(subs);
+        if (subscribers.contains(subs)) {
+            subscribers.remove(subs);
+        }
     }
 
     @Override

@@ -62,12 +62,18 @@ public class Beacon {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(getAlias(address)).append(" ")
-                .append(distance).append("m ")
-                .append(alias).append(" ")
-                .append(toHexString(id));
+        builder.append(alias).append(" ")
+                .append(rssi);
 
         return builder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o != null && o instanceof Beacon) {
+            return ((Beacon)o).alias.equals(this.alias);
+        }
+        return false;
     }
 
     private static final char[] HEX = "0123456789ABCDEF".toCharArray();

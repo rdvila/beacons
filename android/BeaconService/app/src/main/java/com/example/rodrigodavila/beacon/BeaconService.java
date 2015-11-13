@@ -7,8 +7,8 @@ import android.util.Log;
 
 public class BeaconService extends Service {
 
-    public static final BeaconPublisher publisher = new BeaconPublisher();
-    public static final BeaconScanner scanner = new BeaconScanner(publisher);
+    public  final BeaconPublisher publisher = new BeaconPublisher();
+    public  final BeaconScanner scanner = new BeaconScanner(publisher);
 
     public final IBinder binder = new LocalBind();
 

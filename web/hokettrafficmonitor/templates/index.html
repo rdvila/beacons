@@ -1,0 +1,44 @@
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css", href="static/theme.css"></link>
+  </head>
+  <body onload="window.setInterval(updateBeacons, 1000);">
+    <h1>Traffic Monitor</h1>
+    <div id="container">
+      <img class="img" src="static/copa.png" alt="" />
+      <canvas id="trafficCanvas" width="700" height="400"></canvas>
+    </div>
+    <br/>
+      <span id="beaconA"></span>
+      <span id="beaconB"></span>
+      <span id="beaconC"></span>
+
+      <script>
+        function updateBeacons() {
+          var req = new XMLHttpRequest();
+          req.open('GET', 'http://hokettrafficmonitor.herokuapp.com/beacons/')
+          req.onload = function() {
+            if (this.status == 200) {
+              var beacons = JSON.parse(this.response);
+              for (var i=0; i<beacons.beacons.length; i++) {
+                var b = beacons.beacons[i];
+                if (b.alias === 'A') {
+                  beaconA.innerHTML = 'Beacon A: ' + b.rssi;
+                }
+                else if (b.alias === 'B') {
+                  beaconB.innerHTML = 'Beacon B: ' + b.rssi;
+                }
+                else if (b.alias === 'C') {
+                  beaconC.innerHTML = 'Beacon C: ' + b.rssi;
+                }
+              }
+            }
+          };
+          req.send();
+        }
+      </script>
+
+      
+
+  </body>
+</html>

@@ -7,62 +7,103 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.rodrigodavila.beacon.MainActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start"
-        android:id="@+id/btStartService"
-        android:width="@dimen/abc_alert_dialog_button_bar_height"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/edtDistancia"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/scrollView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
 
-    <EditText
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/tv_distance_name"
+                        android:id="@+id/tvDistance"
+                        android:layout_gravity="center_vertical" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/edDistance"
+                        android:layout_gravity="center_vertical" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/tv_time_name"
+                        android:id="@+id/tvTempo" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:ems="10"
+                        android:id="@+id/edTime" />
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:text="@string/bt_start_name"
+                android:id="@+id/btStartService"
+                android:width="@dimen/abc_alert_dialog_button_bar_height"
+                android:textSize="@dimen/abc_text_size_display_1_material" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/edtDistancia"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tempo"
-        android:id="@+id/textView"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Distância"
-        android:id="@+id/textView2"
-        android:layout_above="@+id/editText2"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView3"
-        android:textAlignment="center"
-        android:textSize="@dimen/abc_text_size_display_2_material"
-        android:layout_centerVertical="true"
+        android:id="@+id/lvBeacons"
+        android:layout_below="@+id/scrollView"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/editText2" /><![CDATA[
+        android:choiceMode="none" /><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -76,6 +117,17 @@
         android:text="New Button"
         android:id="@+id/button"
         android:layout_above="@+id/tvb6sI" />
+
+
+
+
+
+
+
+
+
+
+
 
 
 
